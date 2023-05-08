@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/openfabric
+    username: abaynesh
+    password: Atlas@1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  application:
+    name: openfabric
+server:
+  port: 8085
+
+springdoc:
+  api-docs:
+    path: /product-apis
+  swagger-ui:
+    operations-sorter: method
+    tags-sorter: alpha
+    path: /swagger-ui
+jwt:
+  private:
+    key: classpath:rsa.private.key
+  public:
+    key: classpath:rsa.public.key
+user:
+  username: admin
+  fullName: admin
+  password: password
+openfabric:
+  app:
+   jwtExpirationSec: 3600
+   jwtRefreshExpirationSec: 12000
+   issuer: openfabric.com
+
+
+
+
