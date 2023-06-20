@@ -2,10 +2,10 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/openfabric
     username: abaynesh
-    password: Atlas@1234
+    password: mas1985
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   application:

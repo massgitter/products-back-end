@@ -20,18 +20,15 @@ public class ProductService {
     private CategoryService categoryService;
     private final ManufacturerService companService;
 
-    public void createOnInit(String name, String color, int size, Long category, Long company) {
-        Product response = productRepo.findByName(name);
-        if (response == null) {
-            Product product = Product.builder()
-                    .name(name)
-                    .color(color)
-                    .size(size)
-                    .category(categoryService.findById(category))
-                    .manufacturer(companService.findById(company))
-                    .build();
-            productRepo.save(product);
-        }
+    private void createOnInit(String name, String color, int size, Long category, Long company) {
+        Product product = Product.builder()
+                .name(name)
+                .color(color)
+                .size(size)
+                .category(categoryService.findById(category))
+                .manufacturer(companService.findById(company))
+                .build();
+        productRepo.save(product);
     }
 
     public void onInit() {
